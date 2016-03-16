@@ -16,22 +16,25 @@
 		<h:form>
 			<h:messages />
 			<h:panelGrid columns="3">
-				Login : <h:inputText value="#{login.name}" id="login"
-					required="true" requiredMessage="Saisir un login"
-					validatorMessage="#{msgs.errorLogin}">
+				<h:outputText value="#{msgs.loginLabelKey}" />
+				<h:inputText value="#{loginController.name}" id="login" required="true"
+					requiredMessage="#{msgs.requiredLoginLabelKey}"
+					validatorMessage="#{msgs.validatorLoginLabelKey}">
 					<f:validateLength minimum="4" maximum="12" />
 					<f:validateRegex pattern="[a-zA-Z]*" />
 				</h:inputText>
 				<h:message for="login" />
-				Mot de passe :<h:inputSecret value="#{login.password}" id="password"
-					required="true" requiredMessage="Saisir un mot de passe"
-					validatorMessage="Le mot de passe doit contenir entre 4 et 20 caractères">
-					<f:validateRegex pattern="[^&quot; ';]*" />
+
+				<h:outputText value="#{msgs.passwordLabelKey}" />
+				<h:inputSecret value="#{loginController.password}" id="password"
+					required="true" requiredMessage="#{msgs.requiredPasswordLabelKey}"
+					validatorMessage="#{msgs.validatorPasswordLabelKey}">
+					<f:validateRegex pattern="[^&quot;';]*" />
 					<f:validateLength minimum="4" maximum="20" />
 				</h:inputSecret>
 				<h:message for="password" />
 			</h:panelGrid>
-			<h:commandButton value="Valider" action="#{login.validateLogin}" />
+			<h:commandButton value="#{msgs.buttonLoginLabel}" action="#{loginController.loginClicked}" />
 		</h:form>
 
 	</ui:define>

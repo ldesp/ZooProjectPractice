@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14581422139430" configfile="/ZooProjectPractice/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="admin.xhtml" x="221" y="134" id="pf14581424745491" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14581424745492" path="/admin.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="424" y="254" id="pf14581424745493" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14581424745492" path="/login.xhtml"/>
-  <links id="pf14581424745492" target="pf14581424745491" source="pf14581424745493" outcome="success" redirect="true"/>
-</pageflow:Pageflow>

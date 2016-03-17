@@ -2,23 +2,23 @@
 package loginpackage;
 
 import javax.faces.bean.ManagedBean;
+import javax.inject.Inject;
 
 @ManagedBean
 public class LoginController {
 
 	private String				name;
 	private String				password;
+	@Inject
 	private LoginAuthenticator	authenticator;
 
+	@Inject
 	public LoginController(LoginAuthenticator authenticator) {
 		this.authenticator = authenticator;
 	}
 
-	/**
-	 * Empty Contructor need for jsf
-	 */
 	public LoginController() {
-		this.authenticator = new LoginAuthenticator();
+		// App Throws an Error When no Explicit Empty Constructor
 	}
 
 	public String loginClicked() {

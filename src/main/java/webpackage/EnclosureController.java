@@ -1,15 +1,19 @@
 
-package enclosurepackage;
+package webpackage;
 
 import java.util.List;
+
 
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
-@ManagedBean
-public class EnclosureManager {
+import domainpackage.EnclosureService;
+import webpackage.other.Enclosure;
 
-	private List<String>		enclosures;
+@ManagedBean
+public class EnclosureController {
+
+	private List<Enclosure>		enclosures;
 	@Inject
 	private EnclosureService	enclosureService;
 
@@ -17,8 +21,8 @@ public class EnclosureManager {
 		enclosures = enclosureService.retrieveAllEnclosuresFromDataBase();
 		return "Show";
 	}
-
-	public List<String> getEnclosures() {
+	
+	public List<Enclosure> getEnclosures() {
 		return enclosures;
 	}
 
@@ -26,7 +30,7 @@ public class EnclosureManager {
 		return enclosureService;
 	}
 
-	public void setEnclosures(List<String> enclosures) {
+	public void setEnclosures(List<Enclosure> enclosures) {
 		this.enclosures = enclosures;
 	}
 

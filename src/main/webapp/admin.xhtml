@@ -12,7 +12,30 @@
 	   Bienvenue sur la page de gestion du zoo
 	</ui:define>
 	<ui:define name="content">
-	    Add your content here or delete to use the default
+	<!-- Form for all button -->
+		<h:form>
+			<h:messages />
+			<p:panelGrid columns="1">
+				<h:commandButton value="Show Enclosure"
+					action="#{enclosureController.showEnclosuresClicked}" />
+			</p:panelGrid>
+		</h:form>
+		
+		<h:form>
+			<h:dataTable id="enclosure" value="#{enclosureController.enclosures}"
+				var="enclosure">
+				<f:facet name="header">
+					<h:outputText value="All enclosures" />
+				</f:facet>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Name" />
+					</f:facet>
+					<h:outputText value="#{enclosure.name}" />
+				</h:column>
+			</h:dataTable>
+		</h:form>
+
 	</ui:define>
 	<ui:define name="footer">
 	    Add your footer here or delete to use the default

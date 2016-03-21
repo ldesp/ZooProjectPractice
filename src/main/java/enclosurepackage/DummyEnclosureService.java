@@ -4,6 +4,8 @@ package enclosurepackage;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Stateless;
+@Stateless
 public class DummyEnclosureService implements EnclosureService {
 
 	@Override

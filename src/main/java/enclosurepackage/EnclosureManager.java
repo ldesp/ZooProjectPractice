@@ -13,15 +13,6 @@ public class EnclosureManager {
 	@Inject
 	private EnclosureService	enclosureService;
 
-	@Inject
-	public EnclosureManager(EnclosureService enclosureService) {
-		this.enclosureService = enclosureService;
-	}
-
-	public EnclosureManager() {
-		// App Throws an Error When no Explicit Empty Constructor
-	}
-
 	public String showEnclosuresClicked() {
 		enclosures = enclosureService.retrieveAllEnclosuresFromDataBase();
 		return "Show";

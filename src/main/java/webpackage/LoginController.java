@@ -1,8 +1,10 @@
 
-package loginpackage;
+package webpackage;
 
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
+
+import domainpackage.LoginAuthenticator;
 
 @ManagedBean
 public class LoginController {
@@ -12,15 +14,7 @@ public class LoginController {
 	@Inject
 	private LoginAuthenticator	authenticator;
 
-	@Inject
-	public LoginController(LoginAuthenticator authenticator) {
-		this.authenticator = authenticator;
-	}
-
-	public LoginController() {
-		// App Throws an Error When no Explicit Empty Constructor
-	}
-
+	
 	public String loginClicked() {
 		boolean isValidUser = authenticator.login(name, password);
 		if (isValidUser) {

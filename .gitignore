@@ -5,3 +5,5 @@ target
 .factorypath
 .project
 .metadata
+src/main/resources/META-INF/persistence.xml
+src/main/webapp/WEB-INF/zooProject-ds.xml

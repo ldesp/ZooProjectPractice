@@ -17,8 +17,8 @@
 			<h:messages />
 			<p:panelGrid columns="3">
 				<h:outputText value="#{msgs.loginLabelKey}" />
-				<h:inputText value="#{loginController.name}" id="login" required="true"
-					requiredMessage="#{msgs.requiredLoginLabelKey}"
+				<h:inputText value="#{loginController.name}" id="login"
+					required="true" requiredMessage="#{msgs.requiredLoginLabelKey}"
 					validatorMessage="#{msgs.validatorLoginLabelKey}">
 					<f:validateLength minimum="4" maximum="12" />
 					<f:validateRegex pattern="[a-zA-Z]*" />
@@ -34,9 +34,34 @@
 				</h:inputSecret>
 				<h:message for="password" />
 			</p:panelGrid>
-			<h:commandButton value="#{msgs.buttonLoginLabel}" action="#{loginController.loginClicked}" />
+			<h:commandButton value="#{msgs.buttonLoginLabel}"
+				action="#{loginController.loginClicked}" />
 		</h:form>
-
+		
+		<h:form>
+		<h:outputText value="Create Login" />
+			<h:messages />
+			<p:panelGrid columns="3">
+				<h:outputText value="#{msgs.loginLabelKey}" />
+				<h:inputText value="#{loginController.name}" id="createlogin"
+					required="true" requiredMessage="#{msgs.requiredLoginLabelKey}"
+					validatorMessage="#{msgs.validatorLoginLabelKey}">
+					<f:validateLength minimum="4" maximum="12" />
+					<f:validateRegex pattern="[a-zA-Z]*" />
+				</h:inputText>
+				<h:message for="createlogin" />
+				<h:outputText value="#{msgs.passwordLabelKey}" />
+				<h:inputSecret value="#{loginController.password}" id="createpassword"
+					required="true" requiredMessage="#{msgs.requiredPasswordLabelKey}"
+					validatorMessage="#{msgs.validatorPasswordLabelKey}">
+					<f:validateRegex pattern="[^&quot;';]*" />
+					<f:validateLength minimum="4" maximum="20" />
+				</h:inputSecret>
+				<h:message for="createpassword" />
+			</p:panelGrid>
+			<h:commandButton value="Create"
+				action="#{loginController.createLoginClicked}" />
+		</h:form>
 	</ui:define>
 	<ui:define name="footer">
 	    Add your footer here or delete to use the default

@@ -2,10 +2,15 @@ package datapackage.jpa;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.Collection;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 import datapackage.dao.Dao;
 
@@ -33,9 +38,18 @@ public abstract class JpaDao<K, E> implements Dao<K, E> {
 		return entityManager.find(entityClass, id);
 	}
 	
-	public Collection<E> findAll() {
-		Query q = entityManager.createQuery("select * from Users;");
-		Collection<E> list = q.getResultList();
+	
+	
+	public List<E> findAll() {
+		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+		CriteriaQuery<E> cq = cb.createQuery(entityClass);
+		Root<E> root = cq.from(entityClass);
+		cq.select(root);
+		TypedQuery<E> q = entityManager.createQuery(cq);
+		List<E> list = q.getResultList();	
 		return list;
-	}
+	}	
+	
+	
+	
 }

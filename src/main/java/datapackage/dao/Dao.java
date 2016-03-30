@@ -1,6 +1,6 @@
 package datapackage.dao;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface Dao<K, E> {
 	
@@ -10,5 +10,5 @@ public interface Dao<K, E> {
 
 	E findById(K id);
 
-	Collection<E> findAll();
+	List<E> findAll();
 }

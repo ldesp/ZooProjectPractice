@@ -26,11 +26,11 @@
     <datasource jndi-name="java:jboss/datasources/zooProjectDS"
         pool-name="zooProject" enabled="true"
         use-java-context="true">
-        <connection-url>jdbc:h2:mem:zooProject;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1</connection-url>
-        <driver>h2</driver>
+     <connection-url>jdbc:postgresql://localhost:5432/zoodb</connection-url>
+        <driver>postgres</driver>
         <security>
-            <user-name>sa</user-name>
-            <password>sa</password>
+            <user-name>user14</user-name>
+            <password>user14</password>
         </security>
     </datasource>
 </datasources>

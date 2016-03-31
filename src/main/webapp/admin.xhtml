@@ -24,6 +24,14 @@
 		</h:form>
 		
 		<h:form>
+			<h:messages />
+			<p:panelGrid columns="1">
+				<h:commandButton value="Add Enclosure"
+					action="#{enclosureController.goToNewEnclosure}" />
+			</p:panelGrid>
+		</h:form>
+		
+		<h:form>
 			<h:dataTable id="enclosure" value="#{enclosureController.enclosures}"
 				var="enclosure">
 				<f:facet name="header">

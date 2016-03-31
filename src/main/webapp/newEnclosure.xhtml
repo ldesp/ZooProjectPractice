@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/template/basic.xhtml">
+	<ui:define name="header">
+	    Add an enclosure
+	</ui:define>
+	<ui:define name="content">
+
+		<h:form>
+			<p:messages autoUpdate="true" />
+
+			<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+				<p:outputLabel for="console" value="Enclosure Size :" />
+				<p:selectOneMenu id="console" value="#{enclosureController.console}"
+					style="width:130px">
+					<f:selectItem itemLabel="Select One" itemValue="" />
+					<f:selectItem itemLabel="Big enclosure" itemValue="Big enclosure" />
+					<f:selectItem itemLabel="Middle enclosure"
+						itemValue="Middle enclosure" />
+					<f:selectItem itemLabel="Small enclosure"
+						itemValue="Small enclosure" />
+				</p:selectOneMenu>
+			</h:panelGrid>
+			
+			<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+				<p:outputLabel for="console2" value="Type of Enclosure :" />
+				<p:selectOneMenu id="console2" value="#{enclosureController.console2}"
+					style="width:125px">
+					<f:selectItem itemLabel="Select One" itemValue="" />
+					<f:selectItem itemLabel="water" itemValue="water" />
+					<f:selectItem itemLabel="earth"
+						itemValue="earth" />
+					<f:selectItem itemLabel="air"
+						itemValue="air" />
+				</p:selectOneMenu>
+			</h:panelGrid>
+			
+			 <p:commandButton value="Submit" action="#{enclosureController.addEnclosureClicked}" icon="ui-icon-check" />
+
+		</h:form>
+
+
+	</ui:define>
+	<ui:define name="footer">
+	  
+	</ui:define>
+</ui:composition>
+</html>
